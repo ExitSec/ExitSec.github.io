@@ -1,7 +1,7 @@
 ---
 layout: post
 title: An Introduction to Machine Learning 
-category: CODE
+category: Code
 ---
 
 # Introduction
