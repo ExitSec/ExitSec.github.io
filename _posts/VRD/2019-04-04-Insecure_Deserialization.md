@@ -35,6 +35,27 @@ Serialization should be considered similar to that of user input. For anyone tha
 As much as PHP demonstrates warns developers, so does the Open Web Application Security Project (OWASP). OWASP rates Insecure Deserialization at 8th place in its 2017 [OWASP Top 10](https://www.owasp.org/index.php/Top_10-2017_Top_10) listing. Within listing a breakdown of the exploitability, prevalence, detectability and technical know how is illustrated through the following OWASP graphic. It is noteworthy in that the business impact is largely unknown and the requirement of human intelligence to detect such issues is needed as it is difficult to automate such attacks.
 ![OWASP](/images/insecure_deserialization/owasp_breakdown.png "OWASP Breakdown")
 
+# Where Can We Find Deserialization?
+A precursor to a Deserialization vulnerabilities, is that we actually require some form of Serialized input.
+If we were to capture a packet through Burp that utilises serialization, we can see the inner workings of a packet and how a Serialized input is formed. 
+![Burp](/images/insecure_deserialization/burp.png "Packet Capture Burp")
+
+Within this packet we may see a potential string as follows:
+```
+data=O:6:"attack":3:{s:4:"file";s:9:"OriginalFileName";s:4:"data";s:19:"OriginalDataContent";}
+
+```
+Of interest, the core code is of interest:
+```
+data=O:6:"attack"
+:3:
+{s:4:"file";
+s:4:"data";
+}
+
+```
+These are the four key aspects of a Serialized input. Starting with the programs class, how many variables are situated within the class, the names of the variables and the semi colon (This will be explained in-depth further on). This structure provides us with our testing string, which we can utilise and manipulate for our exploit payload.
+
 # How does Insecure Deserialization Work
 Large portions of the issue stem from the trust relationship that developers and programming languages have between the serialize and deserialize (unserialize for PHP) functions have between each other. This is due to the autoloading and execution of code through functions such as:
 
