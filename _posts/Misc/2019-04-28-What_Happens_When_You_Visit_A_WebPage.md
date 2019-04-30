@@ -65,7 +65,7 @@ As performance is the major contender for the switch to IPC, it brings security 
 
 ### Navigation
 
-Part 2 is the key to answering the proposed question. Navigation works in my mind similar to how the Model-View-Controller pattern works within web-based frameworks. We have a master process (Browser process), with child threads (Network and Renderer Process) for functionality which outputs to our rendered view on the browser.
+Part 2 is the key to answering the proposed question. Navigation works in my mind similar to how the Model-View-Controller pattern works within web-based frameworks. We have a master process (Browser process), with child processes (Network and Renderer Process) for functionality which outputs to our rendered view on the browser.
 
 #### Browser Process
 
