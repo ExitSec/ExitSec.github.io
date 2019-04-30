@@ -73,7 +73,7 @@ The master process is referred to as the Browser Process. The address bar within
 
 #### Network Thread
 
-The Network Thread is the key component in answering the proposed question. The Network Thread performs the heavy lifting within the transfer and receiving of data to be rendered and utilised. Once the browsers URI is committed to the Network Thread, a DNS look up will be generated via the DNS Process [[3]](https://www.cloudflare.com/learning/dns/what-is-dns/) and then a TLS data stream is established (This will be further explained in the [DNS and TLS](##-DNS-and-TLS) section).
+The Network Thread is the key component in answering the proposed question. The Network Thread performs the heavy lifting within the transfer and receiving of data to be rendered and utilised. Once the browsers URI is committed to the Network Thread, a DNS look up will be generated via the DNS Process [[3]](https://www.cloudflare.com/learning/dns/what-is-dns/) and then a TLS data stream is established.
 
 The data streams first initial packet **Content-Type** headers MIME will be checked to determine if the data is to be rendered or downloaded. This is determined by the following Content-Types:
 
