@@ -236,7 +236,7 @@ _predEngine = _mlContext.Model.CreatePredictionEngine<GitHubIssue, IssuePredicti
 /*
 * File-based Batch Predictions
 * The following block of code, demonstrates the ingestion of a file (myTestData.tsv) which has no
-* Area, to then predictteed via the _predEngine.Predict function.
+* Area, to then predicted via the _predEngine.Predict function.
 */
 
 _myTestDataView = _mlContext.Data.LoadFromTextFile<GitHubIssue>(_myTestDataPath, hasHeader: true);
