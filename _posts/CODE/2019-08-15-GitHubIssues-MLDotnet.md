@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ML.NET Review - MultiClass Classification Batch Issue Extension
+title: ML.NET Review - MultiClass Classification Batch Issue Prediction Extension
 category: Code
 ---
 
