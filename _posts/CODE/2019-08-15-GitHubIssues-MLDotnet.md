@@ -1,6 +1,6 @@
 ---
 layout: post
-title: GitHub Issues Breakdown Example - ML.NET
+title: ML.NET Review - MultiClass Classification Extension
 category: Code
 ---
 
@@ -39,8 +39,6 @@ Before jumping into a project from scratch using a completely new framework, I t
 
 While many of the examples work on the basis of a singular input for prediction, which is based on the premise of data is hard to acquire. However, there are scenarios in which we have training, testing and unlabelled data such as intrusion detection datasets like KDDCups and Tokyo2006.
 
-It is worth noting that the example follows the learning cycle.
-![ML.NET Workflow](/images/ml_githubissues/mldotnet-annotated-workflow.png "ML.NET Breakdown")
 
 ## MultiClass Classification Review
 
