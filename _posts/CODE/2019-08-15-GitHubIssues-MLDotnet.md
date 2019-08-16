@@ -139,10 +139,10 @@ Finally, to make predictions we must break down the batch of issues into a singu
 foreach (GitHubIssue prediction in predictedResults)
 {
     Console.WriteLine($"============================== Enumerated-based Batch Predictions ===================================");
-    Console.WriteLine($"*-> Title: {prediction.Title} | Prediction: {batchPrediction.Predict(prediction)}");
+    Console.WriteLine($"*-> Title: {prediction.Title} | Prediction: {batchPrediction.Predict(prediction).Area}");
 }
 ```
-Using our prediction engine via the batchPrediction handler, we can now pass a single prediction from our batch to be analysed at any given time. Thus, satisfying the overall limitation of single bits of data.
+Using our prediction engine via the batchPrediction handler, we can now pass a single prediction from our batch to be analysed at any given time. Thus, satisfying the overall limitation of single set of data.
 
 The full example is as follows:
 ```cs
@@ -218,7 +218,7 @@ foreach (GitHubIssue prediction in filePredictedResults)
 }
 
 ```
-However, one key difference here is that we need to access the '.Area' property of the prediction, otherwise we are given the type of data structure the prediction is. Finally, we should have the same results as our manual batch entries and singular predictions.
+Finally, we should have the same results as our manual batch entries and singular predictions.
 
 
 The full example is as follows:
